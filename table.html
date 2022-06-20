@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th>S.no</th>
+            <th>Month</th>
+            <th>Savings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td>
+            <td>January</td>
+            <td>$100</td>
+          </tr>
+          <tr><td>2</td>
+            <td>February</td>
+            <td>$80</td>
+          </tr>
+        </tbody>
+       
+      </table>
+    <form>
+        <label for="name">Name :
+            <input type="text "id="name"/>
+        </label>
+        <label for="savings">Savings:
+            <input type="number "id="savings"/>
+        </label>
+        
+            <input type="submit" value="Submit"/>
+  </form>
+<script>
+    let formElem=document.querySelector("form");
+    formElem.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        let name=document.querySelector("#name").value;
+        let savings=document.querySelector("#savings").value;
+        let sno=document.querySelectorAll("tbody tr").length +1;
+        
+        let tr =document.createElement("tr");
+        tr.innerHTML=`
+            <td>${sno}</td>
+            <td>${name}</td>
+            <td>$${savings}</td>
+            `;
+
+            let tbody=document.querySelector("tbody");
+            tbody.appendChild(tr);
+    })
+</script>
+</body>
+</html>

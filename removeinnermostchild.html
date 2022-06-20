@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink{ margin: auto;
+            background-color: pink;
+            height: 20rem;
+            width: 30rem;
+        }
+        .green{margin: auto;
+            height: 80%;
+            width: 80%;
+            background-color: green;
+        }
+        .blue{margin: auto;
+            height: 80%;
+            width: 80%;
+            background-color: blue;
+        }
+        .yellow{margin: auto;
+            height: 80%;
+            width: 80%;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="pink">
+        <div class="green">
+            <div class="blue">
+                <div class="yellow">
+
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    let divElem=document.querySelector("div");
+    
+function delElem(divElem){
+    if(divElem.children.length>0){
+        delElem(divElem.children[0]);
+    }
+else{
+    divElem.remove();
+}
+}
+delElem(divElem);
+
+//ALITER
+let allDivElems=document.querySelectorAll("div");
+allDivElems[3].remove();
+</script>
+</body>
+</html>
